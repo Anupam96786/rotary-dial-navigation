@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "A navigation system using CSS.",
   "scripts": {
-    "compile:scss": "node-sass -w scss/ -o css/"
+    "compile:scss": "sass -w scss/ css/"
   },
   "repository": {
     "type": "git",
@@ -16,6 +16,6 @@
   },
   "homepage": "https://github.com/Anupam96786/rotary-dial-navigation#readme",
   "dependencies": {
-    "node-sass": "^7.0.1"
+    "sass": "^1.53.0"
   }
 }
