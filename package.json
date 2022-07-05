@@ -1,0 +1,21 @@
+{
+  "name": "rotary-dial-navigation",
+  "version": "1.0.0",
+  "description": "A navigation system using CSS.",
+  "scripts": {
+    "compile:scss": "node-sass -w scss/ -o css/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Anupam96786/rotary-dial-navigation.git"
+  },
+  "author": "Anupam Samanta",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Anupam96786/rotary-dial-navigation/issues"
+  },
+  "homepage": "https://github.com/Anupam96786/rotary-dial-navigation#readme",
+  "dependencies": {
+    "node-sass": "^7.0.1"
+  }
+}
