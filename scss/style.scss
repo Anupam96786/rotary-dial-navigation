@@ -1,0 +1,72 @@
+/*
+ * Author: Anupam Samanta
+ * Github: https://github.com/Anupam96786
+ */
+@use "sass:math";
+@use "variables";
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 1.5s;
+}
+
+.navbar .main-icon {
+  color: white;
+  font-size: 50px;
+  background-color: #3C3F41;
+  height: 100px;
+  width: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+.navbar .nav-container {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.navbar .nav-container .element {
+  position: absolute;
+  color: white;
+  text-decoration: none;
+  font-size: 40px;
+  background-color: #3C3F41;
+  height: 70px;
+  width: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  transition: 1.5s;
+}
+
+.navbar.active {
+  transform: rotate(360deg);
+}
+
+@function get-x-position($radius, $elements, $position) {
+  @return math.round($radius * math.sin(math.div(360deg, $elements) * ($position - 1)));
+}
+
+@function get-y-position($radius, $elements, $position) {
+  @return math.round(-$radius * math.cos(math.div(360deg, $elements) * ($position - 1)));
+}
+
+@for $i from 1 to variables.$elements + 1 {
+  .navbar.active .nav-container .element:nth-child(#{$i}) {
+    transform: translate(get-x-position(variables.$radius, variables.$elements, $i), get-y-position(variables.$radius, variables.$elements, $i));
+  }
+}
