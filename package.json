@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "A navigation system using CSS.",
   "scripts": {
-    "compile:scss": "sass -w scss/:css/"
+    "compile:scss": "sass scss/:css/ --watch --style compressed"
   },
   "repository": {
     "type": "git",
